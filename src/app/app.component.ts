@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BackupServService } from './backup-serv.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'backuping';
+  constructor(public backupSrv: BackupServService) { }
 }
