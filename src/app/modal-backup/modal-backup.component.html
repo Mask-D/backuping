@@ -1,0 +1,45 @@
+<div>
+  <h2 mat-dialog-title>Создать резервную копию</h2>
+  <mat-dialog-content>
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="Название" type="text">
+      </mat-form-field>
+      <mat-form-field>
+        
+          <mat-label>Проект</mat-label>
+          <mat-select>
+            <mat-option value="1">
+              Airat
+            </mat-option>
+            
+          </mat-select>
+        
+      
+        
+      </mat-form-field>
+      <mat-form-field>
+        <mat-form-field style="vertical-align:middle">
+          <mat-label>Комплект</mat-label>
+          <mat-select>
+            <mat-option value="1">
+              База данных
+            </mat-option>
+            <mat-option value="2">
+              Файловое хранилище
+            </mat-option>
+            <mat-option value="3">
+              База данных и файловое хранилище
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-form-field>
+    </form>
+      <button
+        mat-raised-button
+        color="primary">
+        Создать
+      </button>
+   
+  </mat-dialog-content>
+</div>

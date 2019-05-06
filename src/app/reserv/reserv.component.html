@@ -1,6 +1,6 @@
 <mat-tab-group mat-align-tabs="center" style="width:100%">
   <mat-tab label="База данных">
-    <button mat-raised-button color="primary" style="margin: 5px; margin-left:15px">Создать копию БД</button>
+    <button (click)="openModalBackup()" mat-raised-button color="primary" style="margin: 5px; margin-left:15px">Создать копию БД</button>
     
     <mat-list style="width:100%">
       <mat-list-item style="display: flex; flex-direction: column">
@@ -57,7 +57,6 @@
           </mat-list-item>
     </mat-list>
   </mat-tab>
-  <mat-tab label="Файловое хранилище">
-      <button mat-raised-button color="primary" style="margin: 5px; margin-left:15px">Создать копию ФХ</button>
-  </mat-tab>
+  
+  
 </mat-tab-group>

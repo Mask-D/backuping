@@ -18,21 +18,27 @@ import {
   MatSlideToggleModule,
   MatMenuModule,
   MatListModule,
-  MatTabsModule
+  MatTabsModule,
+  MatRadioModule
 } from '@angular/material';
 import { ReservComponent } from './reserv/reserv.component';
 import { RaspisanieComponent } from './raspisanie/raspisanie.component';
 import { RestoreComponent } from './restore/restore.component';
 import { BackupServService } from './backup-serv.service';
+import { ModalBackupComponent } from './modal-backup/modal-backup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
     MenuBackupComponent,
     ReservComponent,
     RaspisanieComponent,
-    RestoreComponent
+    RestoreComponent,
+    ModalBackupComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -51,8 +57,11 @@ import { BackupServService } from './backup-serv.service';
     MatMenuModule,
     MatListModule,
     MatTabsModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [BackupServService],
+  entryComponents: [ModalBackupComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

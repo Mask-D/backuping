@@ -1,9 +1,47 @@
 <mat-tab-group mat-align-tabs="center" style="width:100%">
-    <mat-tab label="База данных">
-  scchedule
+    <mat-tab label="База данных" style="display: flex; justify-content: center">
+  <div style="display:flex; justify-content:center">
+      <div style="border-radius: 5px; width:650px; height: 250px; display: flex; justify-content: center; box-shadow:0px 0px 3px gray; margin: 5px">
+        
+      <div style="align-self: center">
+        <h4>Настроить расписание</h4>
+      <mat-radio-group class="dff">
+        <mat-radio-button value="1">
+          Не делать резервных копий
+        </mat-radio-button>
+        <mat-radio-button value="2">
+          Делать резервные копии каждый день в 
+        </mat-radio-button>
+        <div style="display:flex; flex-direction:row"><mat-radio-button value="3" style="padding-top: 20px">
+         Делать резервные копии каждый(-ую) 
+         
+        </mat-radio-button>
+        <mat-form-field style="vertical-align:middle">
+          <mat-label>день недели</mat-label>
+          <mat-select>
+            <mat-option value="1">
+              понедельник
+            </mat-option>
+            <mat-option value="2">
+              вторник
+            </mat-option>
+          </mat-select>
+        </mat-form-field></div>
+        <mat-radio-button value="4">
+          Делать резервные копии каждый месяц
+        </mat-radio-button>
+      </mat-radio-group>
+    <button mat-raised-button color="primary" style="margin-top:10px">Применить</button>
+  </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content:center">
+    <div style="text-align: center; box-shadow: 0px 0px 3px gray; border-radius: 5px; height: 100px; width: 600px; margin: 5px">
+      Расписание отсутствует
+    </div>
+  </div>
     </mat-tab>
-    <mat-tab label="Файловое хранилище">
-  
-    </mat-tab>
+    
+    
   </mat-tab-group>
   
