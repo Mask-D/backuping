@@ -1,0 +1,16 @@
+.menu-back {
+    width: 325px; 
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+.menu-back1 {
+    width: 325px; 
+    align-self: center;
+}
+
+.menu-buttons {
+    background-color: dodgerblue; 
+    color: white; 
+    min-width:250px
+}

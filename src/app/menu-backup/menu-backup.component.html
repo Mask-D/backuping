@@ -1,29 +1,41 @@
-<div style="width: 325px; align-self: center">
-    <mat-list style="width: 325px; align-self: center">
+<div class="menu-back" id="menu-back">
+   <div style="display: flex"> <mat-list class="menu-back1" id="menu-back1">
         <mat-divider></mat-divider>
         <mat-list-item style=" display: flex; justify-content: center">
-          <button (click)="backupSrv.openReserv()" mat-raised-button color="secondary" style="background-color: dodgerblue; color: white; min-width:250px"><mat-icon mat-list-icon style="font-size:24px">backup</mat-icon>Резервное копирование
+          <button (click)="backupSrv.openReserv()" mat-raised-button color="secondary" class="menu-buttons" id="menu-button-rezerv"><mat-icon mat-list-icon style="font-size:24px">backup</mat-icon>
+            <span *ngIf="rezerv_button">Резервное копирование</span>
             </button>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         <mat-list-item style=" display: flex; justify-content: center">
-          <button (click)="backupSrv.openSchedule()" mat-raised-button color="secondary" style="background-color: dodgerblue; color: white; min-width:250px">
+          <button (click)="backupSrv.openSchedule()" mat-raised-button color="secondary" class="menu-buttons" id="menu-button-schedule">
             <mat-icon mat-list-icon style="font-size:24px">schedule</mat-icon>
-            Расписание
+            <span *ngIf="schedule_button">Расписание</span>
             </button>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         <mat-list-item style=" display: flex; justify-content: center">
-          <button (click)="backupSrv.openRestore()" mat-raised-button color="secondary" style="background-color: dodgerblue; color: white; min-width:250px">
+          <button (click)="backupSrv.openRestore()" mat-raised-button color="secondary" class="menu-buttons" id="menu-button-restore">
             <mat-icon mat-list-icon style="font-size:24px">restore</mat-icon>
-            Восстановление
+            <span *ngIf="restore_button">Восстановление</span>
             </button>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         
     </mat-list>
+  </div>
+  <button *ngIf="rezerv_button" mat-raised-button color="secondary" (click)="transfer(true)" style="line-height:0px; color: gray"> 
+    <mat-icon mat-list-icon style="font-size:24px">arrow_left</mat-icon>
+    <mat-icon mat-list-icon style="font-size:24px">arrow_left</mat-icon>
+    <mat-icon mat-list-icon style="font-size:24px">arrow_left</mat-icon>
+  </button>
+  <button *ngIf="!rezerv_button" mat-raised-button color="secondary" (click)="transfer(false)" style="line-height:0px; color: gray"> 
+      <mat-icon mat-list-icon style="font-size:24px">arrow_right</mat-icon>
+      <mat-icon mat-list-icon style="font-size:24px">arrow_right</mat-icon>
+      <mat-icon mat-list-icon style="font-size:24px">arrow_right</mat-icon>
+    </button>
 
   </div>
