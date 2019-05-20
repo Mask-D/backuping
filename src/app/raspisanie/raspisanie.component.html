@@ -1,18 +1,98 @@
 <mat-tab-group mat-align-tabs="center" style="width:100%">
-    <mat-tab label="База данных" style="display: flex; justify-content: center">
+    <mat-tab label="Расписание резервного копирования" style="display: flex; justify-content: center">
   <div style="display:flex; justify-content:center">
-      <div style="border-radius: 5px; width:650px; height: 250px; display: flex; justify-content: center; box-shadow:0px 0px 3px gray; margin: 5px">
+      <div style="border-radius: 5px; width:650px; height: 300px; display: flex; justify-content: center; box-shadow:0px 0px 3px gray; margin: 5px">
         
       <div style="align-self: center">
         <h4>Настроить расписание</h4>
       <mat-radio-group class="dff">
-        <mat-radio-button value="1">
+        <mat-radio-button value="1" style="margin:5px">
           Не делать резервных копий
         </mat-radio-button>
-        <mat-radio-button value="2">
-          Делать резервные копии каждый день в 
+        <div style="display:flex; flex-direction:row">
+        <mat-radio-button value="2" style="margin:5px; padding-top: 20px">
+          Делать резервные копии каждый 
         </mat-radio-button>
-        <div style="display:flex; flex-direction:row"><mat-radio-button value="3" style="padding-top: 20px">
+        <mat-form-field style="vertical-align:middle; width:85px">
+          <mat-label>день, неделя, месяц, год</mat-label>
+          <mat-select (selectionChange)="chooseWhen($event.value)">
+            <mat-option value="1">
+              день
+            </mat-option>
+            <mat-option value="2">
+              неделю
+            </mat-option>
+            <mat-option value="3">
+              месяц
+            </mat-option>
+            <mat-option value="4">
+              год
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <ng-container *ngIf="when.day">
+          <span style="margin:5px; padding-top: 20px"> в </span>
+        <mat-form-field style="vertical-align:middle; width:85px">
+          <mat-label>часов</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let hour of hours" [value]="hour">
+              {{hour}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+        <mat-form-field style="vertical-align:middle; width: 85px;">
+          <mat-label>минут</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let minute of minutes" [value]="minute">
+             {{minute}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+      <ng-container *ngIf="when.week">
+          <span style="margin:5px; padding-top: 20px"> в </span>
+          <mat-form-field style="vertical-align:middle; width: 130px;">
+              <mat-label>день недели</mat-label>
+              <mat-select>
+                <mat-option [value]="week.monday">
+                 {{week.monday}}
+                </mat-option>
+                <mat-option [value]="week.monday">
+                    {{week.tuesday}}
+                </mat-option>
+                <mat-option [value]="week.monday">
+                    {{week.wednesday}}
+                </mat-option>
+                <mat-option [value]="week.monday">
+                    {{week.thursday}}
+                </mat-option>
+                <mat-option [value]="week.monday">
+                    {{week.friday}}
+                </mat-option>
+                <mat-option [value]="week.monday">
+                    {{week.saturday}}
+                </mat-option>
+                <mat-option [value]="week.monday">
+                    {{week.sunday}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        
+      </ng-container>
+      <ng-container *ngIf="when.month">
+        <span style="margin:5px; padding-top: 20px"> в </span>
+        <mat-form-field style="vertical-align:middle; width:85px">
+          <mat-label>день</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let day of days" [value]="day">
+              {{day}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+      </div>
+     <!--   <div style="display:flex; flex-direction:row"><mat-radio-button value="3" style="margin:5px; padding-top: 20px">
          Делать резервные копии каждый(-ую) 
          
         </mat-radio-button>
@@ -26,10 +106,17 @@
               вторник
             </mat-option>
           </mat-select>
-        </mat-form-field></div>
-        <mat-radio-button value="4">
-          Делать резервные копии каждый месяц
+        </mat-form-field></div>-->
+        <div style="display:flex; flex-direction:row">
+        <mat-radio-button value="4" style="margin:5px; padding-top: 20px">
+          Сделать резервную копию в определенный день
         </mat-radio-button>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Выбор даты">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
       </mat-radio-group>
     <button mat-raised-button color="primary" style="margin-top:10px">Применить</button>
   </div>

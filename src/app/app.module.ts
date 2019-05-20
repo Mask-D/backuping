@@ -19,7 +19,9 @@ import {
   MatMenuModule,
   MatListModule,
   MatTabsModule,
-  MatRadioModule
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import { ReservComponent } from './reserv/reserv.component';
 import { RaspisanieComponent } from './raspisanie/raspisanie.component';
@@ -58,7 +60,10 @@ import { CommonModule } from '@angular/common';
     MatListModule,
     MatTabsModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [BackupServService],
   entryComponents: [ModalBackupComponent],
