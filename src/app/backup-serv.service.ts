@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ export class BackupServService {
   show_schedule = false;
   show_restore = false;
 
+  private forFixBar = new Subject<any>();
+  fixBar$ = this.forFixBar.asObservable();
   constructor() { }
 
 
@@ -26,6 +29,11 @@ export class BackupServService {
     this.show_reserv = false;
     this.show_schedule = false;
     this.show_restore = true;
+  }
+
+
+  fixBar(value: any) {
+    this.forFixBar.next(value);
   }
 
 }

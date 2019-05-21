@@ -48,11 +48,15 @@ export class MenuBackupComponent implements OnInit {
     b_rz.minWidth = 250 + 'px';
     b_sc.minWidth = 250 + 'px';
     b_re.minWidth = 250 + 'px';
+    this.backupSrv.fixBar(1);
     setTimeout(() => {
       this.rezerv_button = true;
     this.schedule_button = true;
     this.restore_button = true;
     }, 500);
   }
+  setTimeout(() => {
+    this.backupSrv.fixBar(1);
+  }, 700);
 }
 }
